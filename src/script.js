@@ -7,7 +7,6 @@ function allBtnLink() {
 
   function openApp(e) {
     let domain = window.location.href.split("index.html") + "projects/";
-
     let linkPathText = e.target.parentElement.querySelector("H2").innerHTML;
 
     // Suggested fixes ----
@@ -17,11 +16,9 @@ function allBtnLink() {
     // error: while clicking on the h1 gets opened stopwach - fix it
 
     let filePath = linkPathText.split(" ").join("-").toLowerCase();
-
     let finalURL = domain + filePath + "/index.html";
-    console.log(finalURL);
 
-    // window.location.href = finalURL;
+    window.location.href = finalURL;
   }
 }
 

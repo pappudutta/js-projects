@@ -3,9 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stopwatch</title>
+    <title>Image Color Picker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
-    <h1>Stopwatch</h1>
+    <div class="wrapper">
+      <!-- Image Container -->
+      <div class="image-container">
+        <img src="" alt="" class="image-container" />
+      </div>
+      <!-- All Buttons -->
+      <div class="btns-container">
+        <input type="file" id="file" accesskey="image/*" />
+        <label for="file">Open a photo</label>
+        <button id="pick-color">Pick Color</button>
+      </div>
+      <div id="error" class="hide"></div>
+      <div id="result" class="hide">
+        <!-- color code box -->
+        <div>
+          <input type="text" id="hex-val-ref" />
+          <button onclick="copy('hex-val-ref')">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+        <!-- Rgb color code box -->
+        <div>
+          <input type="text" id="rgb-val-ref" />
+          <button onclick="copy('rgb-val-ref')">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
