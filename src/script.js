@@ -6,7 +6,8 @@ function allBtnLink() {
   projectSec[0].addEventListener("click", openApp);
 
   function openApp(e) {
-    let domain = window.location.href.split("index.html") + "projects/";
+    let domain =
+      window.location.href.split("index.html").join("") + "projects/";
     let linkPathText = e.target.parentElement.querySelector("H2").innerHTML;
 
     // Suggested fixes ----
