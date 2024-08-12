@@ -57,3 +57,27 @@ const colorSelector = async () => {
 
 // Event listener for pickColor button click
 pickColor.addEventListener("click", colorSelector);
+
+// Allow user to chose image of there own choice
+
+fileInput.onchange = () => {
+  result.style.display = "none"; //Hide previous result
+  let reader = new FileReader(); // Create a file reader object
+  reader.readAsDataURL(fileInput.files[0]); //Read the concepts of the file
+
+  reader.onload = () => {
+    image.setAttribute("src", reader.result);
+  };
+};
+
+// function to copy the color code
+let copy = textId => {
+  document.getElementById(textId).select();
+  document.execCommand("copy");
+
+  //   display alert
+  customAlert.style.transform = "scale(1)";
+  setTimeout(() => {
+    customAlert.style.transform = "scale(0)";
+  }, 1000);
+};

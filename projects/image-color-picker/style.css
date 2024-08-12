@@ -83,6 +83,13 @@ button {
   color: #7c8696;
 }
 
+#picked-color-ref {
+  grid-column: 2;
+  grid-row: 1/3;
+  border: 0.6em solid #d9e8ff;
+  border-radius: 0.5em;
+}
+
 #custom-alert {
   transform: scale(0); /* Initially Hidden */
   transition: 0.5s;
