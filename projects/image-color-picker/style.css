@@ -83,6 +83,22 @@ button {
   color: #7c8696;
 }
 
+#custom-alert {
+  transform: scale(0); /* Initially Hidden */
+  transition: 0.5s;
+  transform-origin: center;
+  background-color: #d9e8ff;
+  columns: #025bee;
+  text-align: center;
+  padding: 0.5em;
+  margin-top: 1.5em;
+}
+
 .hide {
-  /* display: none; */
+  display: none;
+}
+
+#error {
+  color: #ff725a;
+  text-align: center;
 }
