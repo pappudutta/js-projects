@@ -1,0 +1,31 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #d3fdff, #4aa8e2);
+}
+#container {
+  width: 100vh;
+  height: 100vh;
+  position: relative;
+}
+#drag_box {
+  font-family: "poppins", sans-serif;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 7rem;
+  width: 7rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(235, 207, 179);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0.7rem;
+  box-shadow: 0 0 20px rgb(197, 196, 200);
+
+  cursor: move;
+}
