@@ -86,8 +86,11 @@ button {
 #picked-color-ref {
   grid-column: 2;
   grid-row: 1/3;
-  border: 0.6em solid #d9e8ff;
+  margin-top: 1em;
+  height: 4em;
+  border: 0.2em solid #ffffff;
   border-radius: 0.5em;
+  box-shadow: 0 0 20px rgb(156, 156, 156);
 }
 
 #custom-alert {

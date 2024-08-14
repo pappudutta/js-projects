@@ -73,7 +73,7 @@ fileInput.onchange = () => {
 // function to copy the color code
 let copy = textId => {
   document.getElementById(textId).select();
-  document.execCommand("copy");
+  document.execCommand("copy"); // depricated
 
   //   display alert
   customAlert.style.transform = "scale(1)";
