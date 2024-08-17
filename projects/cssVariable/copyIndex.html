@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Update css Variable With <span class="hl">JS</span></h1>
+    <div class="controls">
+      <label for="spacing">Spacing: </label>
+      <input
+        id="spacing"
+        type="range"
+        name="spacing"
+        min="10"
+        max="200"
+        value="10"
+        data-sizing="px"
+      />
+      <label for="blur">Blur: </label>
+      <input
+        id="blur"
+        name="blur"
+        min="0"
+        max="25"
+        value="10"
+        type="range"
+        data-sizing="px"
+      />
+      <label for="color">Color: </label>
+      <input id="base" name="base" value="#ffc600" type="color" />
+    </div>
+    <img
+      src="https://images.unsplash.com/photo-1719937206667-ac87c15ad3e9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    />
+    <style>
+      :root {
+        --base: #ffc600;
+        --spacing: 10px;
+        --blur: 10px;
+      }
+      body {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        background: #1b657b;
+        color: white;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 30px;
+        font-weight: 100;
+      }
+      .controls {
+        margin-bottom: 30px;
+      }
+      .hl {
+        color: var(--base);
+      }
+      input {
+        width: 100px;
+      }
+      img {
+        width: 80%;
+        height: 300px;
+        filter: blur(var(--blur));
+        padding: var(--spacing);
+        background: var(--base);
+      }
+    </style>
+    <script>
+      const inputs = document.querySelectorAll(".controls input");
+
+      function handleUpdate() {
+        let suffix = this.dataset.sizing || "";
+        console.log(this.name);
+        console.log(this.value);
+
+        document.documentElement.style.setProperty(
+          `--${this.name}`,
+          this.value + suffix
+        );
+      }
+      inputs.forEach(input => input.addEventListener("change", handleUpdate));
+      inputs.forEach(input =>
+        input.addEventListener("mousemove", handleUpdate)
+      );
+    </script>
+  </body>
+</html>
